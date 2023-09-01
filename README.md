@@ -21,7 +21,5 @@ PRIVATE_KEY=PRIVATE_KEY_OF_DEPLOYER
 
 # Deploy smart contracts
 
-## Music contract
-
-- Deploy contract: `yarn contract:deploy:music`
-- Verify contract on scan: `yarn contract:verify ./abi-music.json`
+- Deploy contract: `yarn contract:deploy`
+- Verify contract on scan: `yarn contract:verify`
