@@ -53,7 +53,7 @@ contract HcashPool is ReentrancyGuard {
 
         require(
             _groth16Verifier.verifyProof(_pA, _pB, _pC, _pubOut),
-            "Invalid withdraw proof"
+            "Invalid withdrawl proof"
         );
 
         proof[_proof] = true;
