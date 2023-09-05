@@ -28,7 +28,7 @@ async function main() {
       contract.address
     );
     await runCommand(
-      `hardhat verify --contract contracts/${contract.path}/${contract.contractName}.sol:${contract.contractName}  --network mumbai ${contract.address} ${inputStr}`
+      `hardhat verify --contract contracts/${contract.path}${contract.contractName}.sol:${contract.contractName}  --network rpc ${contract.address} ${inputStr}`
     );
   }
 }

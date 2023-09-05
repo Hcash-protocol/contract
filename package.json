@@ -5,7 +5,7 @@
   "scripts": {
     "compile": "hardhat compile",
     "contract:verify": "node ./scripts/verify.js ./abi.json",
-    "contract:deploy": "yarn compile && hardhat run --network local ./scripts/deploy.ts",
+    "contract:deploy": "yarn compile && hardhat run --network rpc ./scripts/deploy.ts",
     "localnode": "hardhat node"
   },
   "author": "",

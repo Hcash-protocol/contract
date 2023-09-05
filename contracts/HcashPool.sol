@@ -20,10 +20,12 @@ contract HcashPool is ReentrancyGuard {
 
     receive() external payable {
         require(
-            msg.value == 0.1 ether ||
+            msg.value == 0.001 ether ||
+                msg.value == 0.01 ether ||
+                msg.value == 0.1 ether ||
                 msg.value == 1 ether ||
                 msg.value == 10 ether,
-            "Ether must be 0.1, 1 or 10"
+            "Ether must be 0.001, 0.01, 0.1, 1 or 10"
         );
         emit Deposit(msg.sender, msg.value);
     }
@@ -58,7 +60,7 @@ contract HcashPool is ReentrancyGuard {
 
         proof[_proof] = true;
 
-        (bool sent, ) = _to.call{value: _pubOut[0]}("");
+        (bool sent, ) = _to.call{value: _pubOut[1]}("");
         require(sent, "Failed to send Ether");
         emit Withdrawl(_to);
         return true;
