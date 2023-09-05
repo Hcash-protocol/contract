@@ -16,7 +16,7 @@ contract HcashPool is ReentrancyGuard {
 
     event Deposit(address from, uint amount);
 
-    event Withdraw(address recipient);
+    event Withdrawl(address recipient);
 
     receive() external payable {
         require(
@@ -28,7 +28,7 @@ contract HcashPool is ReentrancyGuard {
         emit Deposit(msg.sender, msg.value);
     }
 
-    function withdraw(
+    function withdrawl(
         uint[2] calldata _pA,
         uint[2][2] calldata _pB,
         uint[2] calldata _pC,
@@ -60,7 +60,7 @@ contract HcashPool is ReentrancyGuard {
 
         (bool sent, ) = _to.call{value: _pubOut[0]}("");
         require(sent, "Failed to send Ether");
-        emit Withdraw(_to);
+        emit Withdrawl(_to);
         return true;
     }
 }
